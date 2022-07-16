@@ -1,0 +1,6 @@
+gulp/
+node_modules/
+photoStudio/
+gulpfile.js
+package-lock.json
+package.json
