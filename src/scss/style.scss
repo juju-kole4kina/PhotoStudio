@@ -1,2 +1,58 @@
+@use "sass:math";
+
+@import "mixins";
+
 @import "fonts";
+
+// Шрифт по уполномочию
+$fontFamily: "";
+$fontSize: rem(14);
+
+// Основные цвета
+$mainColor: "";
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера
+$maxWidthContainer: 1170;
+// Общий отступ у контейнера
+//(слева + справа)
+$containerPadding: 30;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейкпоинты
+$pc: em($containerWidth); // ПК, ноуты, большие планшеты
+$tablet: em(991.98); // планшеты, телефоны с большим разрешением
+$mobile: em(767.98); // телефоны
+$mobileSmall: em(479.98); // маленькие телефоны
+
+// Обнуляющие стили
 @import "null";
+
+// Оболочка
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   > main {
+      flex: 1 1 auto;
+   }
+}
+
+// Контейнер
+.__container {
+   margin: 0 auto;
+   max-width: rem($maxWidthContainer);
+   box-sizing: content-box;
+}
+
+// Стили header
+@import "header";
+
+// Стили footer
+@import "footer";
