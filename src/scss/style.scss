@@ -19,6 +19,7 @@ $mainColor: #555555;
 $green: #7AC751;
 $lightGrey: #F7F8FA;
 $grey: #C2C2C2;
+$bg: #ECF1F2;
 
 
 // Минимальная ширина страницы
@@ -45,6 +46,10 @@ $mobileSmall: em(479.98); // маленькие телефоны
 
 // Обнуляющие стили
 @import "null";
+
+body{
+	background-color: $bg;
+}
 
 // Оболочка
 .wrapper {

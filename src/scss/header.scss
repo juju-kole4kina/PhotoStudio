@@ -5,7 +5,7 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: 30px;
+		flex: 0 0 30px;
 		height: 18px;
 		cursor: pointer;
 		z-index: 5;
@@ -50,15 +50,18 @@
    &__top {
       border-bottom: 1px solid $grey;
    }
+
+	&__body {
+	}
 }
 
 .top-header {
-   padding: 10px 0;
+   padding: rem(10) 0;
    &__container {
       display: flex;
       align-items: center;
-      gap: 20px;
-      min-height: 30px;
+      gap: rem(20);
+      min-height: rem(30);
       
    }
 
@@ -98,3 +101,121 @@
 }
 
 
+.body-header {
+padding: rem(10) 0;
+	&__container {
+		display: flex;
+		min-height: rem(90);
+		align-items: center;
+	}
+
+	&__logo {
+		font-family: $logoFont;
+		font-size: rem(30);
+	}
+
+	&__search {
+		flex: 1 1 auto;
+		padding-right: rem(20);
+		@include adaptiveValue("padding-left", 158, 20);
+	}
+	&__actions {
+	}
+}
+.search-header {
+	max-width: rem(300);
+	background-color: rgba(7, 7, 7, 0.03);
+	border-radius: rem(3);
+	position: relative;
+	border: 1px solid rgba(4, 4, 4, 0.5);
+	&__button {
+		position: absolute;
+		top: 0;
+		left: rem(4);
+		background-color: transparent;
+		height: rem(30);
+		width: rem(30);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__input {
+		width: 100%;
+		height: rem(30);
+		background-color: transparent;
+		border-radius: rem(3);
+		padding: 0px rem(20) 0px rem(40);
+	}
+}
+
+
+.actions-header {
+display: flex;
+align-items: center;
+column-gap: rem(30);
+	&__location {
+		> span{
+			font-family: $fontFamily;
+		}
+		display: inline-flex;
+		align-items: center;
+		margin: 0 rem(20) 0 0;
+		&::before{
+			font-size: rem(20);
+			margin: 0 em(5, 24) 0 0;
+		}
+	}
+
+	&__phones {
+		
+	}
+
+	&__cart {
+	}
+}
+
+.phones-header {
+
+	&__items {
+	}
+
+	&__item {
+	}
+
+	&__phone {
+		> span{
+			font-family: $fontFamily;
+		}
+		&::before{
+			font-size: rem(20);
+			margin: 0 em(5) 0 0;
+		}
+	}
+
+	&__arrow {
+	}
+
+	&__list {
+	}
+
+	&__callback {
+	}
+}
+.cart-header {
+
+	&__icon {
+		> span{
+			font-family: $fontFamily;
+		}
+	}
+
+	&__body {
+	}
+
+	&__sum {
+	}
+
+	&__link {
+	}
+}
