@@ -49,9 +49,21 @@
 
    &__top {
       border-bottom: 1px solid $grey;
+		a {
+			&:hover{
+				transition: all 0.3s ease 0s;
+				color: black;
+			}
+		}
    }
 
 	&__body {
+		a {
+			&:hover{
+				transition: all 0.3s ease 0s;
+				color: black;
+			}
+		}
 	}
 }
 
@@ -124,7 +136,7 @@ padding: rem(10) 0;
 }
 .search-header {
 	max-width: rem(300);
-	background-color: rgba(7, 7, 7, 0.03);
+	background-color: $bgSearch;
 	border-radius: rem(3);
 	position: relative;
 	border: 1px solid rgba(4, 4, 4, 0.5);
@@ -181,22 +193,44 @@ column-gap: rem(30);
 	}
 
 	&__item {
+		position: relative;
+		display: flex;
 	}
 
 	&__phone {
 		> span{
 			font-family: $fontFamily;
 		}
+		white-space: nowrap;
+		line-height: math.div(20, 18);
 		&::before{
-			font-size: rem(20);
+			font-size: rem(15);
 			margin: 0 em(5) 0 0;
 		}
 	}
 
 	&__arrow {
+		color: $mainColor;
+		font-size: rem(9);
+		margin-left: em(5, 4);
+
+		&:hover{
+			transition: all 0.3s ease 0s;
+			color: black;
+		}
 	}
 
 	&__list {
+		position: absolute;
+		top: 100%;
+		width: 100%;	
+		left: 0;
+		background-color: $bg;
+		border-radius: rem(7);
+		padding: rem(10);
+		li{
+			&:nor(:last-child) {margin-bottom: em(8, 18);}
+		}
 	}
 
 	&__callback {

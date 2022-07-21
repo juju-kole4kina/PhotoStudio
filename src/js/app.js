@@ -1,6 +1,7 @@
 import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
+flsFunctions.spollers();
 
 import Swiper, { Navigation, Pagination } from 'swiper';
 
