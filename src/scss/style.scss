@@ -9,6 +9,7 @@
 @import "fonts";
 @import "icons";
 
+
 // Шрифт по уполномочию
 $fontFamily: "Comfortaa";
 $fontSize: rem(14);
@@ -114,6 +115,7 @@ min-width: 0;
 // Стили header
 @import "header";
 
+@import "popup";
 @import "slider";
 
 // Стили footer

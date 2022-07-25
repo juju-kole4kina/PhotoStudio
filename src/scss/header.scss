@@ -225,6 +225,7 @@ column-gap: rem(30);
 		top: 100%;
 		width: 100%;	
 		left: 0;
+		margin: rem(5) 0 0 0;
 		background-color: $bg;
 		border-radius: rem(7);
 		padding: rem(10);
@@ -234,6 +235,9 @@ column-gap: rem(30);
 	}
 
 	&__callback {
+		display: block;
+		margin: rem(3) 0 0 0;
+		line-height: math.div(22, 18);
 	}
 }
 .cart-header {
