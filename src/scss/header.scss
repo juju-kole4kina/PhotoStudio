@@ -324,7 +324,7 @@ column-gap: 15px;
 			transition: all 0.3s ease 0s;
 		}
 		padding: 0 rem(51);
-		
+		position: relative;
 	}
 
 	&__link {
@@ -336,10 +336,10 @@ column-gap: 15px;
 	}
 
 	&__sub-menu {
-		position: absolute;
+	position: absolute;
+	left: rem(0);
 display: none;
-// left: rem(190);
-border: 1px solid $mainColor;
+// border: 1px solid $mainColor;
 padding: 0 rem(10);
 	}
 }
@@ -349,7 +349,7 @@ display: block;
 
 }
 .sub-menu {
-	
+		// left: 172px;
 	&__item-title{
 		font-size: rem(20);
 		margin: rem(10) 0;
