@@ -296,74 +296,96 @@ column-gap: 15px;
 
 	
 .catalog-header {
-	position: relative;
-	background-color: $mainColor;
-	color: #fff;
-	// padding: rem(10) 0;
-	&__container {
+   margin: 15px 0;
+   color: #fff;
+   background-color: $mainColor;
+   position: relative;
+   &__container {
+   }
 
-	}
-
-	&__menu {
-	}
+   &__menu {
+   }
 }
 .menu-catalog {
-	
-	&__list {
-		
-		display: flex;
-		gap: rem(10);
-		justify-content: space-between;
-		
-	}
 
-	&__item {
-		&:hover{
-			background-color: $green;
-			color: #fff;
-			transition: all 0.3s ease 0s;
+   &__list {
+      display:flex;
+      gap: rem(10);
+      row-gap: rem(5);
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+   }
+
+   &__item {
+      flex-grow: 1;
+      @media(any-hover: hover) {
+			&:hover{
+				background-color: $green;
+				color: #fff;
+				transition: all 0.3s ease 0s;
+			}
 		}
-		padding: 0 rem(51);
-		position: relative;
-	}
+   }
 
-	&__link {
-		min-height: rem(50);
+   &__item-title {
+      min-height: rem(50);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-	}
+      
+   }
 
-	&__sub-menu {
-	position: absolute;
-	left: rem(0);
-display: none;
-// border: 1px solid $mainColor;
-padding: 0 rem(10);
-	}
+   &__link {
+   }
+
+   &__sub-menu {
+      display: none;
+      position: absolute;
+      padding: 0 rem(10);
+z-index: 10;
+// left: rem(0);
+   }
 }
 
 .menu-catalog__list li:hover .menu-catalog__sub-menu{
-display: block;
+   // display: block;
+   display: flex;
+   justify-content: space-between; 
+   // gap: rem(40);
+   flex-wrap: wrap;
+   
+    
+   
+   }
 
-}
 .sub-menu {
-		// left: 172px;
-	&__item-title{
-		font-size: rem(20);
+   display: flex;
+   
+   // align-items: center;
+   //    text-align: center;
+   &__menu-items {
+      
+      
+      
+      
+   }
+
+   &__items-title {
+      font-size: rem(15);
 		margin: rem(10) 0;
 		color: $mainColor;
+      // &:first-child{
+      //    margin-right: 15px;
+      // }
+   }
 
-	}
-
-	&__item {
-		margin-bottom: rem(5);
-	}
-
-	&__link {
-		color: $mainColor;
+   &__link {
+      color: $mainColor;
 		line-height: math.div(20, 14);
-	}
+   }
 }
+
 
