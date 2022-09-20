@@ -241,7 +241,7 @@ column-gap: rem(30);
 		border-radius: rem(7);
 		padding: rem(10);
 		li{
-			&:nor(:last-child) {margin-bottom: em(8, 18);}
+			&:not(:last-child) {margin-bottom: em(8, 18);}
 		}
 	}
 
