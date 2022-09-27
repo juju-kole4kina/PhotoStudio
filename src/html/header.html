@@ -1,18 +1,25 @@
 <header class="header">
    <div class="header__top top-header">
       <div class="top-header__container">
-         <div class="top-header__menu menu">
-            <nav class="menu__body">
-               <ul class="menu__list">
-                  <li><a href="" class="menu__link">О нас</a></li>
-                  <li><a href="" class="menu__link">Оплата и доставка</a></li>
-                  <li><a href="" class="menu__link">FAQ</a></li>
-                  <li><a href="" class="menu__link">Контакты</a></li>
-               </ul>
-            </nav>
-         </div>
+         <nav class="top-header__menu menu-top-header">
+            <ul class="menu-top-header__list">
+               <li class="menu-top-header__item"><a href="" class="menu-top-header__link">О нас</a></li>
+               <li class="menu-top-header__item"><a href="" class="menu-top-header__link">Оплата и доставка</a></li>
+               <li class="menu-top-header__item"><a href="" class="menu-top-header__link">FAQ</a></li>
+               <li class="menu-top-header__item"><a href="" class="menu-top-header__link">Контакты</a></li>
+            </ul>
+         </nav>
          <a href="" class="top-header__user _icon-singIn"><span> Личный кабинет</span></a>
-         <button type="button" class="icon-menu"><span></span></button>
+         <nav hidden class="menu">
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+            <div class="menu__body">
+               <ul class="menu__list">
+                  <li class="menu__item">
+                     <!-- <a href="" class="menu__link _icon-arrow-down"></a> -->
+                  </li>
+               </ul>
+            </div>
+         </nav>
       </div>
    </div>
    <div class="header__body body-header">
@@ -43,13 +50,13 @@
 
                <a href="#" class="phones-header__callback open-popup">Перезвоните мне</a>
             </div>
-            <div class="actions-header__cart cart-header">
+            <a href="" class="actions-header__cart cart-header">
                <div class="cart-header__icon _icon-basket"><span>0</span></div>
                <div class="cart-header__body">
                   <div class="cart-header__sum">0 р.</div>
-                  <a href="" class="cart-header__link">Оформить заказ</a>
+                  <div class="cart-header__link">Оформить заказ</div>
                </div>
-            </div>
+            </a>
          </div>
       </div>
    </div>

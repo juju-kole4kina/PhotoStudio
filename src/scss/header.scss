@@ -1,49 +1,6 @@
 //Burger
 
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		flex: 0 0 30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			left: 0px;
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: $mainColor;
-		}
-		&::before {
-			top: 0px;
-		}
-		&::after {
-			bottom: 0px;
-		}
-		span {
-			top: calc(50% - 1px);
-		}
-		.menu-open & {
-			span {
-				transform: scale(0);
-			}
-			&::before {
-				transform: rotate(-45deg);
-				top: calc(50% - 1px);
-			}
-			&::after {
-				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
-			}
-		}
-	}
-}
+
 
 .header {
 
@@ -52,7 +9,7 @@
 		a {
 			&:hover{
 				transition: all 0.3s ease 0s;
-				color: black;
+				color: $green;
 			}
 		}
    }
@@ -61,7 +18,7 @@
 		a {
 			&:hover{
 				transition: all 0.3s ease 0s;
-				color: black;
+				color: $green;
 			}
 		}
 	}
@@ -106,12 +63,9 @@
       }
    }
 }
-.menu {
 
-   &__body {
-   }
-
-   &__list {
+.menu-top-header{
+	&__list {
       display: flex;
       flex-wrap: wrap;
       row-gap: 5px;
@@ -123,13 +77,35 @@
    }
 }
 
+.menu {
+   &__body {
+		@media (max-width: $mobile) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			overflow: auto;
+			// background-color: $grey;
+			padding: rem(50) rem(15);
+			z-index: 4;
+			
+		}
+   }
+	@media (max-width: $tablet){
+		flex: 0 0 30px;
+		display: block;
+	}
+   
+}
 
 .body-header {
 padding: rem(10) 0;
 	&__container {
 		display: flex;
-		min-height: rem(90);
+		height: rem(90);
 		align-items: center;
+		@include adaptiveValue("height", 90, 60, 1950, 1400, 1);
 	}
 
 	&__logo {
@@ -140,11 +116,13 @@ padding: rem(10) 0;
 	&__search {
 		flex: 1 1 auto;
 		padding-right: rem(20);
-		@include adaptiveValue("padding-left", 158, 20);
+		@include adaptiveValue("padding-left", 158, 20, 1950, 1400, 1);
+		// @include adaptiveValue("padding-right", 100, 5);
 	}
 	&__actions {
 	}
 }
+
 .search-header {
 	max-width: rem(300);
 	background-color: $bgSearch;
@@ -172,11 +150,11 @@ padding: rem(10) 0;
 	}
 }
 
-
 .actions-header {
 display: flex;
 align-items: center;
-column-gap: rem(30);
+// column-gap: rem(30);
+@include adaptiveValue("column-gap", 30, 15,  1950, 1000, 1);
 	&__location {
 		> span{
 			font-family: $fontFamily;
@@ -184,6 +162,7 @@ column-gap: rem(30);
 		display: inline-flex;
 		align-items: center;
 		margin: 0 rem(20) 0 0;
+		@include adaptiveValue("margin-right", 20, 0, 1950, 1250, 1);
 		&::before{
 			font-size: rem(20);
 			margin: 0 em(5, 24) 0 0;
@@ -249,8 +228,10 @@ column-gap: rem(30);
 		display: block;
 		margin: rem(3) 0 0 0;
 		line-height: math.div(22, 18);
+			color: $green;
 	}
 }
+
 .cart-header {
 display: flex;
 align-items: center;
@@ -280,6 +261,9 @@ column-gap: 15px;
 		line-height: math.div(20, 14);
 		font-size: rem(14);
 		flex: 0 0 auto;
+		@media (max-width: em(1250)) {
+			display: none;
+		}
 	}
 
 	&__sum {
@@ -290,11 +274,10 @@ column-gap: 15px;
 	}
 
 	&__link {
+			color: $green;
 	}
 }
 
-
-	
 .catalog-header {
    margin: 15px 0;
    color: #fff;
@@ -306,6 +289,7 @@ column-gap: 15px;
    &__menu {
    }
 }
+
 .menu-catalog {
 
    &__list {
@@ -316,16 +300,19 @@ column-gap: 15px;
       justify-content: space-between;
       align-items: center;
       text-align: center;
+
    }
 
    &__item {
       flex-grow: 1;
+		z-index: 2;
       @media(any-hover: hover) {
 			&:hover{
 				background-color: $green;
 				color: #fff;
 				transition: all 0.3s ease 0s;
 			}
+			
 		}
    }
 
@@ -346,7 +333,9 @@ column-gap: 15px;
       position: absolute;
       padding: 0 rem(10);
 z-index: 10;
+
 // left: rem(0);
+
    }
 }
 
@@ -384,6 +373,7 @@ z-index: 10;
 
    &__link {
       color: $mainColor;
+		
 		line-height: math.div(20, 14);
    }
 }
